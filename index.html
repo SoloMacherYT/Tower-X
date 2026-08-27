@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="Tower X Logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="flex items-center justify-between mt-2 mb-2">
+            <div class="pl-8 pr-8">
+                <a href="index.html">
+                    <div class="flex items-center justify-center pl-5 pr-5">
+                        <img class="h-20 w-20" src="Tower Logo.png" alt="">
+                        <img class="h-12 w-12" src="Tower X.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="flex flex-col border-l border-r w-full">
+                <div class="flex justify-evenly text-gray-400 text-sm mb-2">
+                    <a href="about.html">About</a>
+                    <a href="history.html">History</a>
+                    <a target="_blank" href="https://discord.gg/7yqztaJNzz">Community</a>
+                </div>
+                <hr>
+                <div class="flex justify-around mt-2">
+                    <a  href="index.html">HOME</a>
+                    <a href="partners.html">PARTNERS</a>
+                    <a href="teams.html">TEAMS</a>
+                    <a href="" onclick="message()">SHOP</a>
+                </div>
+            </div>
+            <div class="flex pl-4 pr-10 gap-8 text-gray-400 text-xs">
+                <a class="flex flex-col items-center justify-center" href="" onclick="message()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>PROFILE</a>
+                <a class="flex flex-col items-center justify-center" href="" onclick="message()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.00488 7.99966V5.99966C7.00488 3.23824 9.24346 0.999664 12.0049 0.999664C14.7663 0.999664 17.0049 3.23824 17.0049 5.99966V7.99966H20.0049C20.5572 7.99966 21.0049 8.44738 21.0049 8.99966V20.9997C21.0049 21.5519 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.5519 3.00488 20.9997V8.99966C3.00488 8.44738 3.4526 7.99966 4.00488 7.99966H7.00488ZM7.00488 9.99966H5.00488V19.9997H19.0049V9.99966H17.0049V11.9997H15.0049V9.99966H9.00488V11.9997H7.00488V9.99966ZM9.00488 7.99966H15.0049V5.99966C15.0049 4.34281 13.6617 2.99966 12.0049 2.99966C10.348 2.99966 9.00488 4.34281 9.00488 5.99966V7.99966Z"></path></svg>SHOP</a>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #070707;
+  --bg-light: #0e0e0e;
+  --white: #f5f5f5;
+  --gray: #a0a0a0;
+  --red: #e32020;
+  --border: #262626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  overflow: hidden;
+}
+
+/* GENERAL */
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 110px 30px;
+}
+
+.eyebrow {
+  color: var(--red);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1, h2, h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  margin: 20px 0 30px;
+}
+
+p {
+  color: var(--gray);
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 8%;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero::after {
+  content: "X";
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Oswald", sans-serif;
+  font-size: min(55vw, 700px);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 2px #1f1f1f;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+h1 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.88;
+  margin: 20px 0 30px;
+  letter-spacing: -2px;
+}
+
+h1 span,
+.cta h2 span {
+  color: var(--red);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 25px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.25s ease;
+}
+
+.btn-red {
+  background: var(--red);
+  color: white;
+}
+
+.btn-red:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(227, 32, 32, 0.25);
+}
+
+.btn-outline {
+  border: 1px solid #555;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: white;
+}
+
+/* ABOUT */
+
+.about {
+  border-bottom: 1px solid var(--border);
+}
+
+.about p + p {
+  margin-top: 20px;
+}
+
+/* CARDS */
+
+.section-heading {
+  margin-bottom: 50px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  padding: 35px 25px;
+  min-height: 300px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-5px);
+}
+
+.number {
+  color: var(--red);
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* BENEFITS */
+
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  border-top: 1px solid var(--border);
+}
+
+.benefit-list {
+  display: grid;
+  gap: 12px;
+}
+
+.benefit-list div {
+  padding: 22px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  display: flex;
+  gap: 15px;
+}
+
+/* CTA */
+
+.cta {
+  max-width: 1200px;
+  margin: 40px auto 100px;
+  padding: 80px 30px;
+  border: 1px solid var(--border);
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(227, 32, 32, 0.12), transparent 50%),
+    var(--bg-light);
+}
+
+.cta h2 {
+  margin-top: 20px;
+}
+
+.cta p {
+  margin: 0 auto 35px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 75vh;
+    padding: 100px 25px;
+  }
+
+  .section {
+    padding: 80px 25px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero::after {
+    right: -10%;
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+        </style>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+            <span class="eyebrow">TOWER X</span>
+
+            <h1>
+                CONNECT.<br>
+                COLLABORATE.<br>
+                CREATE. <span>GROW.</span>
+            </h1>
+
+            <p>
+                You don't have to build alone. Tower X brings creators,
+                talent, resources, and opportunities together.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-red">JOIN THE HUB →</a>
+                <a href="#" class="btn btn-outline">EXPLORE TOWER X</a>
+            </div>
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about section">
+            <span class="eyebrow">ABOUT TOWER X</span>
+
+            <h2>ONE COMMUNITY.<br>ONE NETWORK.</h2>
+
+            <p>
+            Tower X brings content creators and the people who support them
+            together in one connected ecosystem.
+            </p>
+
+            <p>
+            Whether you're a YouTuber, streamer, editor, designer, artist,
+            or social media creator, this is a place to meet the right people,
+            build great projects, and grow together.
+            </p>
+        </section>
+
+
+        <!-- CORE VALUES -->
+        <section class="section">
+            <div class="section-heading">
+            <span class="eyebrow">OUR MISSION</span>
+            <h2>BUILD BETTER.<br>TOGETHER.</h2>
+            </div>
+
+            <div class="card-grid">
+
+            <article class="card">
+                <div class="number">01</div>
+                <h3>CONNECT</h3>
+                <p>
+                Meet creators, editors, designers, artists, and professionals
+                from across the Tower X community.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="number">02</div>
+                <h3>COLLABORATE</h3>
+                <p>
+                Find the right people for videos, streams, creative projects,
+                events, and new opportunities.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="number">03</div>
+                <h3>CREATE</h3>
+                <p>
+                Turn ideas into something real with access to creative talent,
+                tools, resources, and support.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="number">04</div>
+                <h3>GROW</h3>
+                <p>
+                Build your skills, audience, network, and career alongside
+                a community that wants to see you succeed.
+                </p>
+            </article>
+
+            </div>
+        </section>
+
+
+        <!-- BENEFITS -->
+        <section class="benefits section">
+            <div>
+            <span class="eyebrow">WHY JOIN TOWER X?</span>
+            <h2>MORE THAN A COMMUNITY.<br>A CREATOR ECOSYSTEM.</h2>
+
+            <p>
+                Tower X is built to make the creator journey less lonely
+                and more connected.
+            </p>
+            </div>
+
+            <div class="benefit-list">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9998 1L6 11H18L11.9998 1ZM11.9998 4.8873L14.4676 9H9.53232L11.9998 4.8873ZM6.75 20C5.23122 20 4 18.7688 4 17.25C4 15.7312 5.23122 14.5 6.75 14.5C8.26878 14.5 9.5 15.7312 9.5 17.25C9.5 18.7688 8.26878 20 6.75 20ZM6.75 22C9.37335 22 11.5 19.8734 11.5 17.25C11.5 14.6266 9.37335 12.5 6.75 12.5C4.12665 12.5 2 14.6266 2 17.25C2 19.8734 4.12665 22 6.75 22ZM15 15.5V19.5H19V15.5H15ZM13 21.5V13.5H21V21.5H13Z"></path></svg>
+                Custom Assets
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3ZM4 9V19H20V9H4ZM6 13H11V17H6V13Z"></path></svg>
+                Exclusive Events
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 8V20H9V8H5ZM3 7L7 2L11 7V22H3V7ZM19 16V14H16V12H19V10H17V8H19V6H15V20H19V18H17V16H19ZM14 4H20C20.5523 4 21 4.44772 21 5V21C21 21.5523 20.5523 22 20 22H14C13.4477 22 13 21.5523 13 21V5C13 4.44772 13.4477 4 14 4Z"></path></svg>
+                Creator Tools
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5.23379 7.72989C6.65303 5.48625 9.15342 4 12.0002 4C14.847 4 17.3474 5.48625 18.7667 7.72989L20.4569 6.66071C18.6865 3.86199 15.5612 2 12.0002 2C8.43928 2 5.31393 3.86199 3.54356 6.66071L5.23379 7.72989ZM12.0002 20C9.15342 20 6.65303 18.5138 5.23379 16.2701L3.54356 17.3393C5.31393 20.138 8.43928 22 12.0002 22C15.5612 22 18.6865 20.138 20.4569 17.3393L18.7667 16.2701C17.3474 18.5138 14.847 20 12.0002 20ZM12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12ZM12 13C14.2091 13 16 14.7909 16 17H8C8 14.7909 9.79086 13 12 13ZM6 12C6 13.6569 4.65685 15 3 15C1.34315 15 0 13.6569 0 12C0 10.3431 1.34315 9 3 9C4.65685 9 6 10.3431 6 12ZM21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z"></path></svg>
+                Collab Opportunities
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.00488 3.00275H21.0049C21.5572 3.00275 22.0049 3.45046 22.0049 4.00275V20.0027C22.0049 20.555 21.5572 21.0027 21.0049 21.0027H3.00488C2.4526 21.0027 2.00488 20.555 2.00488 20.0027V4.00275C2.00488 3.45046 2.4526 3.00275 3.00488 3.00275ZM8.50488 14.0027V16.0027H11.0049V18.0027H13.0049V16.0027H14.0049C15.3856 16.0027 16.5049 14.8835 16.5049 13.5027C16.5049 12.122 15.3856 11.0027 14.0049 11.0027H10.0049C9.72874 11.0027 9.50488 10.7789 9.50488 10.5027C9.50488 10.2266 9.72874 10.0027 10.0049 10.0027H15.5049V8.00275H13.0049V6.00275H11.0049V8.00275H10.0049C8.62417 8.00275 7.50488 9.12203 7.50488 10.5027C7.50488 11.8835 8.62417 13.0027 10.0049 13.0027H14.0049C14.281 13.0027 14.5049 13.2266 14.5049 13.5027C14.5049 13.7789 14.281 14.0027 14.0049 14.0027H8.50488Z"></path></svg>
+                Brand Opportunities
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 17.0022C21.999 19.8731 19.9816 22.2726 17.2872 22.8616L16.6492 20.9476C17.8532 20.7511 18.8765 20.0171 19.4649 19H17C15.8954 19 15 18.1046 15 17V13C15 11.8954 15.8954 11 17 11H19.9381C19.446 7.05369 16.0796 4 12 4C7.92038 4 4.55399 7.05369 4.06189 11H7C8.10457 11 9 11.8954 9 13V17C9 18.1046 8.10457 19 7 19H4C2.89543 19 2 18.1046 2 17V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V12.9987V13V17V17.0013V17.0022Z"></path></svg>
+                Dedicated Support
+            </div>
+            </div>
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="cta">
+            <span class="eyebrow">YOUR NEXT STEP</span>
+
+            <h2>READY TO BUILD<br><span>SOMETHING BIG?</span></h2>
+
+            <p>
+            Your next collaboration, opportunity, teammate, or creative idea
+            could start with one connection.
+            </p>
+
+            <a href="#" class="btn btn-red">JOIN TOWER X →</a>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <div class="flex items-center justify-evenly mt-8">
+            <div>
+                <img class="w-[150px] h-[150px]" src="Tower X.png" alt="Tower X logo">
+                <p class="text-gray-400 text-xs mt-2">© 2026 - Present | Tower X. All rights reserved</p>
+                <div class="flex mt-2 gap-4">
+                    <a target="_blank" href="https://www.youtube.com/@mrryuzakixe"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.2439 4C12.778 4.00294 14.1143 4.01586 15.5341 4.07273L16.0375 4.09468C17.467 4.16236 18.8953 4.27798 19.6037 4.4755C20.5486 4.74095 21.2913 5.5155 21.5423 6.49732C21.942 8.05641 21.992 11.0994 21.9982 11.8358L21.9991 11.9884L21.9991 11.9991C21.9991 11.9991 21.9991 12.0028 21.9991 12.0099L21.9982 12.1625C21.992 12.8989 21.942 15.9419 21.5423 17.501C21.2878 18.4864 20.5451 19.261 19.6037 19.5228C18.8953 19.7203 17.467 19.8359 16.0375 19.9036L15.5341 19.9255C14.1143 19.9824 12.778 19.9953 12.2439 19.9983L12.0095 19.9991L11.9991 19.9991C11.9991 19.9991 11.9956 19.9991 11.9887 19.9991L11.7545 19.9983C10.6241 19.9921 5.89772 19.941 4.39451 19.5228C3.4496 19.2573 2.70692 18.4828 2.45587 17.501C2.0562 15.9419 2.00624 12.8989 2 12.1625V11.8358C2.00624 11.0994 2.0562 8.05641 2.45587 6.49732C2.7104 5.51186 3.45308 4.73732 4.39451 4.4755C5.89772 4.05723 10.6241 4.00622 11.7545 4H12.2439ZM9.99911 8.49914V15.4991L15.9991 11.9991L9.99911 8.49914Z"></path></svg></a>
+                    <a target="_blank" href="https://www.instagram.com/towerxcommunity"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg></a>
+                    <a target="_blank" href="https://www.twitch.tv/ryuzakixe"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.001 3V14.7391L16.3053 19.4348H12.3923L9.95523 21.7826H6.91402V19.4348H3.00098V6.13043L4.2281 3H21.001ZM19.4358 4.56522H6.13141V16.3043H9.26185V18.6522L11.6097 16.3043H16.3053L19.4358 13.1739V4.56522ZM16.3053 7.69565V12.3913H14.7401V7.69565H16.3053ZM12.3923 7.69565V12.3913H10.8271V7.69565H12.3923Z"></path></svg></a>
+                    <a target="_blank" href="https://discord.gg/7yqztaJNzz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.3034 5.33716C17.9344 4.71103 16.4805 4.2547 14.9629 4C14.7719 4.32899 14.5596 4.77471 14.411 5.12492C12.7969 4.89144 11.1944 4.89144 9.60255 5.12492C9.45397 4.77471 9.2311 4.32899 9.05068 4C7.52251 4.2547 6.06861 4.71103 4.70915 5.33716C1.96053 9.39111 1.21766 13.3495 1.5891 17.2549C3.41443 18.5815 5.17612 19.388 6.90701 19.9187C7.33151 19.3456 7.71356 18.73 8.04255 18.0827C7.41641 17.8492 6.82211 17.5627 6.24904 17.2231C6.39762 17.117 6.5462 17.0003 6.68416 16.8835C10.1438 18.4648 13.8911 18.4648 17.3082 16.8835C17.4568 17.0003 17.5948 17.117 17.7434 17.2231C17.1703 17.5627 16.576 17.8492 15.9499 18.0827C16.2789 18.73 16.6609 19.3456 17.0854 19.9187C18.8152 19.388 20.5875 18.5815 22.4033 17.2549C22.8596 12.7341 21.6806 8.80747 19.3034 5.33716ZM8.5201 14.8459C7.48007 14.8459 6.63107 13.9014 6.63107 12.7447C6.63107 11.5879 7.45884 10.6434 8.5201 10.6434C9.57071 10.6434 10.4303 11.5879 10.4091 12.7447C10.4091 13.9014 9.57071 14.8459 8.5201 14.8459ZM15.4936 14.8459C14.4535 14.8459 13.6034 13.9014 13.6034 12.7447C13.6034 11.5879 14.4323 10.6434 15.4936 10.6434C16.5442 10.6434 17.4038 11.5879 17.3825 12.7447C17.3825 13.9014 16.5548 14.8459 15.4936 14.8459Z"></path></svg></a>
+                </div>
+            </div>
+            <div class="flex justify-evenly gap-20">
+                <div>
+                    <span>About</span>
+                    <div class="flex flex-col text-gray-400 text-sm mt-2 gap-2">
+                        <a href="about.html">Who we are</a>
+                        <a href="partners.html">Partners</a>
+                        <a href="">Management Team</a>
+                        <a href="">Brand Toolkit</a>
+                    </div>
+                </div>
+                <div>
+                    <span>Company</span>
+                    <div class="flex flex-col text-gray-400 text-sm mt-2">
+                        <a href="teams.html">Teams</a>
+                        <a href="">Creators</a>
+                        <a href="history.html">History</a>
+                        <a href="">Careers</a>
+                    </div>
+                </div>
+                <div>
+                    <span>Terms & Policies</span>
+                    <div class="flex flex-col text-gray-400 text-sm mt-2 gap-2">
+                    <a href="">Privacy</a>
+                    <a href="">Terms & Conditions</a>
+                    </div>
+                </div>
+                <div>
+                    <span>Shopping</span>
+                    <div class="flex flex-col text-gray-400 text-sm mt-2 gap-2">
+                    <a href="">Shop</a>
+                    <a href="">Returns Policy</a>
+                    <a href="">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>

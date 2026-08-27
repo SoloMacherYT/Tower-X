@@ -1,0 +1,14 @@
+
+
+html, body{
+    font-family: "Inter", sans-serif;
+    color: white;
+    background: #000;
+}
+
+
+svg{
+    color: red;
+    height: 25px;
+    width: 25px;
+}
